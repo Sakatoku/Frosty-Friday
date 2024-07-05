@@ -44,24 +44,24 @@ def open_csv():
 
     return result_df
 
-# convert dict to df
-def dict2df(image_list):
-    df = pd.DataFrame.from_dict(image_list, orient="index", columns=["image"])
-    return df
+# Main function
+def main():
+    # open csv file
+    df = open_csv()
 
-# open csv file
-df = open_csv()
+    # display as dataframe
+    df_to_show = df.loc[:, ["filename", "image_hex_head"]]
+    # and select row
+    event = st.dataframe(df_to_show, on_select="rerun", selection_mode="single-row")
 
-# display as dataframe
-df_to_show = df.loc[:, ["filename", "image_hex_head"]]
-# and select row
-event = st.dataframe(df_to_show, on_select="rerun", selection_mode="single-row")
+    # check selection
+    if len(event.selection.rows) <= 0:
+        st.stop()
 
-# check selection
-if len(event.selection.rows) <= 0:
-    st.stop()
+    # display image
+    row = event.selection.rows[0]
+    st.write("filename: ", df.loc[row, "filename"])
+    st.image(df.loc[row, "image_bytes"], use_column_width=True)
 
-# display image
-row = event.selection.rows[0]
-st.write("filename: ", df.loc[row, "filename"])
-st.image(df.loc[row, "image_bytes"], use_column_width=True)
+if __name__ == "__main__":
+    main()
