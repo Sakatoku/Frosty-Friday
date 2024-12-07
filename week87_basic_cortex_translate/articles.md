@@ -1,5 +1,8 @@
 # Frosty Friday Week 87解説：SnowflakeでLLMを始めよう
 
+この記事は[Frosty Friday Advent Calendar 2024](https://qiita.com/advent-calendar/2024/frostyfriday)の8日目です。  
+みんなでFrosty Fridayをやってみよう！  
+
 ## Frosy Fridayとは
 
 Frosty Fridayとは「**Snowflakeユーザが、Snowflakeユーザのために作成し、Snowflakeスキルの練習と開発に役立つ**」チャレンジです。  
