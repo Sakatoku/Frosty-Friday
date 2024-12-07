@@ -85,6 +85,8 @@ LATERAL FLATTEN(WEEK_87.language_codes) LF;
 
 これで無事にチャレンジクリアです！  
 
+![Challenge Clear](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2917580/937b2efb-11af-509a-d8b3-17509764ba1a.png)
+
 ## おまけ
 
 今回のチャレンジでは```CORTEX.TRANSLATE```という翻訳してくれる関数を使うものでしたが、メッセージに対する応答を生成する、ザ・LLMな機能も用意されています。  
@@ -127,6 +129,8 @@ SELECT
 FROM
     TRANSLATED;
 ```
+
+![Combination](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2917580/7aade74c-e8b9-5f9d-34e6-5c366f6c53b0.png)
 
 ## Frosty Fridayを始めよう！
 
