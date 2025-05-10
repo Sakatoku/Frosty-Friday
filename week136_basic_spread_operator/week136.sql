@@ -24,6 +24,10 @@ SELECT 'Daniel', ARRAY_CONSTRUCT(6, 8, 2);
 -- 確認
 SELECT * FROM seed_packs;
 
+-- これはエラーになる
+-- 000002 (0A000): Unsupported feature 'spread argument with non-constant array input'.
+SELECT gardener, SUM(**seeds) AS total FROM seed_packs;
+
 -- 可変長引数で渡された値をすべて足し合わせる関数
 CREATE OR REPLACE PROCEDURE ARRAY_SUM(
   _a INT,
