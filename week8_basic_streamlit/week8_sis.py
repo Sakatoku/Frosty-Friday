@@ -15,10 +15,10 @@ def fetch_data() -> pd.DataFrame:
         select
             date_trunc('week', to_date(payment_date)) as payment_date,
             sum(amount_spent) as amount_spent
-        from frostyfriday_db.public.week8_tbl
+        from frostyfriday_db.week8.week8_tbl
         group by 1
         """
-    snowpark_df = session.execute(sql_query)
+    snowpark_df = session.sql(sql_query)
     df = snowpark_df.to_pandas()
     return df
 
